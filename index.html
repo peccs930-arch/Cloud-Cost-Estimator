@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Cloud Cost Estimator</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            width: 500px;
+            margin: 50px auto;
+        }
+        input, button {
+            padding: 10px;
+            margin: 10px 0;
+            width: 100%;
+        }
+        h2 {
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+
+<h2>Cloud Cost Estimator</h2>
+
+<label>Compute Hours:</label>
+<input type="number" id="compute">
+
+<label>Storage (GB):</label>
+<input type="number" id="storage">
+
+<button onclick="calculateCost()">Estimate Cost</button>
+
+<h3 id="result"></h3>
+
+<script>
+function calculateCost() {
+    let compute = document.getElementById("compute").value;
+    let storage = document.getElementById("storage").value;
+
+    let total = (compute * 0.05) + (storage * 0.02);
+
+    document.getElementById("result").innerHTML =
+        "Estimated Cost: $" + total.toFixed(2);
+}
+</script>
+
+</body>
+</html>
